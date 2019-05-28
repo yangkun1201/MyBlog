@@ -1,0 +1,29 @@
+input[placeholder="标题"]{
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 75%;
+    height:30px;
+    padding:12px 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[placeholder="类别"]{
+    display: inline-block;
+    position: absolute;
+    margin-right: 8px;
+    width: 15%;
+    height:30px;
+    right: 0px;
+    padding:12px 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#uploadBtn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    cursor: pointer;
+}
