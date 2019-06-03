@@ -26,4 +26,5 @@ input[placeholder="类别"]{
     color: white;
     padding: 16px 32px;
     cursor: pointer;
+    border-radius: 4px;
 }

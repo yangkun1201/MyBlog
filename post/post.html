@@ -11,16 +11,16 @@
     <title>Clean Blog - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+    <!-- highlight -->
+    <link href="../css/monokai.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
-
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -36,65 +36,55 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">主页</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="upload/upload.html">上传</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="post.html">Sample Post</a>
-            </li> -->
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">登录</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+    <div id="app">
+      <!-- Page Header -->
+      <header class="masthead" style="background-image: url('../img/post-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="post-heading">
+                <h1>{{this.article.title}}</h1>
+                
+                <span class="meta">Posted by
+                  <a href="#">{{this.article.authorId}}</a>
+                  on {{this.article.createTime}}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- Main Content -->
-    <div class="container" id="app">
-      <div class="row">
-        <div id="articlesContainer" class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview" v-for="(article,index) in articleList" :key="article.id">
-            <a href="#" @click="openDetail(article.id)">
-              <h2 class="post-title">
-                {{article.title}}
-              </h2>
-              <!-- <h3 class="post-subtitle">
-                Problems look mighty small from 150 miles up
-              </h3> -->
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">{{article.authorId}}</a>
-              {{article.createTime}}</p>
+      <!-- Post Content -->
+      <article>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto" v-html="this.article.content">
+             
+            </div>
           </div>
-          <hr>
-         
-          <!-- Pager -->
-          <!-- <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-          </div> -->
         </div>
-      </div>
+      </article>
+      <hr>
     </div>
 
-    <hr>
+  
 
     <!-- Footer -->
     <footer>
@@ -134,14 +124,15 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
+    <script src="../js/clean-blog.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
-    <script src="index.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="post.js"></script>
 
   </body>
 

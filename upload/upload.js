@@ -1,6 +1,7 @@
 var simplemde = new SimpleMDE({
     element:$('#editText')[0],
-    initialValue: '在此处编辑内容...'
+    initialValue: '在此处编辑内容...',
+    showIcons: ["code", "table"]
 });
 
 var baseUrl = 'http://127.0.0.1:8080';
@@ -10,7 +11,7 @@ $('#uploadBtn').click(function(){
 });
 
 function addArticle(){
-    var textValue = simplemde.value();
+    var textValue = simplemde.markdown(simplemde.value());
     var title = $('#title').val();
     var type = $('#type').val();
     if(title===''){
