@@ -11,7 +11,8 @@ $('#uploadBtn').click(function(){
 });
 
 function addArticle(){
-    var textValue = simplemde.markdown(simplemde.value());
+    var contentMd = simplemde.value();
+    var content = simplemde.markdown(simplemde.value());
     var title = $('#title').val();
     var type = $('#type').val();
     if(title===''){
@@ -22,7 +23,7 @@ function addArticle(){
         alert('类别不能为空');
         return;
     }
-    if(textValue===''){
+    if(contentMd===''){
         alert('内容不能为空');
         return;
     }
@@ -34,7 +35,8 @@ function addArticle(){
         data:JSON.stringify({
             title:title,
             type:type,
-            content:textValue,
+            content:content,
+            contentMd:contentMd,
             authorId:'1',
             createTime:new Date().getTime(),
             modifyTime:''
@@ -43,6 +45,7 @@ function addArticle(){
             console.log(msg);
             if(msg.status==='ok'){
                 alert('上传成功');
+                window.location.href='../index.html';
             }
         }
     });

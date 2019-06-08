@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/simplemde.min.css">
+    <link rel="stylesheet" href="manager.css">
+    <title>作品管理</title>
+</head>
+<body>
+    <h1>作品管理</h1>
+    <hr>
+    <div id="app">
+        <ul>
+            <li v-for="(article,index) in articleList" :key="article.id">
+                <a v-on:click="editArticle(article)">{{article.title}}</a>
+            </li>    
+        </ul>
+        <div class="article-content">
+            <input type="text" id="title" placeholder="标题" v-model="title">
+            <input type="text" id="type" placeholder="类别" v-model="type">
+            <textarea id="editText">
+            </textarea>
+            <button v-on:click="updateArticle">修改</button>
+            <button v-on:click="deleteArticle">删除</button>
+        </div>
+        
+    </div>
+</body>
+ <!-- Bootstrap core JavaScript -->
+ <script src="../vendor/jquery/jquery.min.js"></script>
+ <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Custom scripts for this template -->
+ <script src="../js/clean-blog.min.js"></script>
+ <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+ <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="../js/simplemde.min.js"></script>
+<script src="manager.js"></script>
+</html>
