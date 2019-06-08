@@ -2,7 +2,7 @@
 var app = new Vue({
     el:'#app',
     data:{
-        baseUrl:'http://127.0.0.1:8080',
+        baseUrl:'',
         articleList:[],
         curArticleId:null,
         title:'',
@@ -59,6 +59,7 @@ var app = new Vue({
         }
     },
     mounted(){
+       this.baseUrl = config.baseUrl;
        this.getArticleList();
     }
 });

@@ -4,7 +4,7 @@ var simplemde = new SimpleMDE({
     showIcons: ["code", "table"]
 });
 
-var baseUrl = 'http://127.0.0.1:8080';
+var baseUrl = this.baseUrl = config.baseUrl;
 
 $('#uploadBtn').click(function(){
     addArticle();
